@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Контакти кіно-афіші та форма зворотного зв'язку з валідацією.">
+
+
+  <meta property="og:title" content="Кіно-афіша — Контакти">
+  <meta property="og:description" content="Форма з fieldset/legend, radio/checkbox, select/optgroup, required/pattern.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/og-cover.jpg">
+  <meta property="og:url" content="https://example.com/cinema-poster/contacts.html">
+
+  <title>Кіно-афіша | Контакти</title>
+</head>
+
+<body>
+  <header>
+    <h1>Контакти</h1>
+
+    <nav aria-label="Головна навігація">
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="catalog.html">Каталог</a></li>
+        <li><a href="contacts.html" aria-current="page">Контакти</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="info-title">
+      <h2 id="info-title">Наші контакти</h2>
+      <p>Email: <a href="mailto:cinema.poster@example.com">cinema@gmail.com</a></p>
+      <p>Телефон (приклад): +380501234567</p>
+    </section>
+
+    
+    <section aria-labelledby="form-title">
+      <h2 id="form-title">Форма зворотного зв’язку</h2>
+
+      <form action="#" method="post">
+        <fieldset>
+          <legend>1 Контактні дані</legend>
+
+          <p>
+            <label for="name">Ім’я</label><br>
+            <input id="name" name="name" type="text" required>
+          </p>
+
+          <p>
+            <label for="email">Email</label><br>
+            <input id="email" name="email" type="email" required>
+          </p>
+
+          <p>
+            <label for="phone">Телефон</label><br>
+            <input id="phone" name="phone" type="tel"
+                   required
+                   pattern="^\+380\d{9}$"
+                   placeholder="+380501234567"
+                   aria-describedby="phoneHint">
+            <small id="phoneHint">Формат: +380 і 9 цифр (наприклад, +380501234567).</small>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>2) Як отримати відповідь?</legend>
+
+          <p>
+            <input id="replyEmail" name="replyMethod" type="radio" value="email" required>
+            <label for="replyEmail">На email</label>
+          </p>
+
+          <p>
+            <input id="replyPhone" name="replyMethod" type="radio" value="phone">
+            <label for="replyPhone">По телефону</label>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>3) Тема звернення</legend>
+
+          <p>
+            <label for="topic">Обери тему</label><br>
+            <select id="topic" name="topic" required>
+              <option value="" selected disabled>Оберіть варіант</option>
+              <optgroup label="Каталог">
+                <option value="add-movie">Додати фільм</option>
+                <option value="edit-movie">Виправити опис/рейтинг</option>
+              </optgroup>
+              <optgroup label="Сповіщення">
+                <option value="subscribe">Підписка на оновлення</option>
+                <option value="unsubscribe">Відписка</option>
+              </optgroup>
+            </select>
+          </p>
+
+          <p>
+            <strong>Додатково:</strong><br>
+            <input id="agreeNews" name="extras" type="checkbox" value="news">
+            <label for="agreeNews">Хочу отримувати новини афіші</label><br>
+
+            <input id="agreeTop" name="extras" type="checkbox" value="top">
+            <label for="agreeTop">Хочу “топ фільми тижня”</label>
+          </p>
+        </fieldset>
+
+        <!-- Поля базового рівня: Ім'я, Email, Повідомлення -->
+        <fieldset>
+          <legend>4) Повідомлення</legend>
+          <p>
+            <label for="message">Текст повідомлення</label><br>
+            <textarea id="message" name="message" required rows="6"></textarea>
+          </p>
+        </fieldset>
+
+        <p>
+          <button type="submit">Надіслати</button>
+          <button type="reset">Очистити</button>
+        </p>
+      </form>
+    </section>
+
+    <section aria-labelledby="img-title">
+      <h2 id="img-title">Тематичне зображення</h2>
+      <img src="assets/posters/contact.jpg" width="1100" height="550"
+           alt="Тематичне зображення: зал кінотеатру">
+    </section>
+  </main>
+
+  <footer>
+    <p>© Кіно-афіша — Контакти (HTML5).</p>
+  </footer>
+</body>
+</html>

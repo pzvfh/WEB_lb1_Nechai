@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Кіно-афіша: список фільмів, описи, рейтинги та навігація за жанрами.">
+
+
+  <meta property="og:title" content="Кіно-афіша — добірка фільмів">
+  <meta property="og:description" content="Список фільмів з описом, рейтингом і переходом до жанрів у каталозі.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/og-cover.jpg">
+  <meta property="og:url" content="https://example.com/cinema-poster/">
+
+  <title>Кіно-афіша | Головна</title>
+</head>
+
+<body>
+  <header>
+    <h1>Кіно-афіша</h1>
+
+    <nav aria-label="Головна навігація">
+      <ul>
+        <li><a href="index.html" aria-current="page">Головна</a></li>
+        <li><a href="catalog.html">Каталог</a></li>
+        <li><a href="contacts.html">Контакти</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content">
+    <section aria-labelledby="about-title">
+      <h2 id="about-title">Про сайт</h2>
+      <p>
+        Тут зібрані фільми з коротким описом та рейтингом.
+         <a href="catalog.html">Каталозі</a> можна перейти до потрібного жанру.
+      </p>
+
+    </section>
+
+
+    <section aria-labelledby="price-title">
+      <h2 id="price-title">Прайс квитків (приклад)</h2>
+      <table>
+        <caption>Ціни на квитки (умовний приклад)</caption>
+        <thead>
+          <tr>
+            <th scope="col">Тип</th>
+            <th scope="col">Будні</th>
+            <th scope="col">Вихідні</th>
+            <th scope="col">Примітка</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Стандарт</td>
+            <td>8 €</td>
+            <td>10 €</td>
+            <td>2D сеанси</td>
+          </tr>
+          <tr>
+            <td>Студент</td>
+            <td>6 €</td>
+            <td>8 €</td>
+            <td>За посвідченням</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+
+    <section aria-labelledby="media-title">
+      <h2 id="media-title">Мультимедіа</h2>
+
+      <article aria-labelledby="video-title">
+        <h3 id="video-title">Відео (трейлер)</h3>
+        <video controls preload="metadata" width="640" height="360">
+          <source src="media/trailer.mp4" type="video/mp4">
+          Ваш браузер не підтримує відео.
+        </video>
+      </article>
+
+      <article aria-labelledby="audio-title">
+        <h3 id="audio-title">Аудіо (саундтрек)</h3>
+        <audio controls preload="metadata">
+          <source src="media/soundtrack.mp3" type="audio/mpeg">
+          Ваш браузер не підтримує аудіо.
+        </audio>
+      </article>
+    </section>
+
+   
+    <section aria-labelledby="img-title">
+      <h2 id="img-title">Тематичне зображення</h2>
+      <img src="assets/posters/sample.jpg"
+           width="1100" height="550"
+           alt="Тематичне зображення: кінотеатр, екран та попкорн">
+    </section>
+  </main>
+
+  <footer>
+    <p>© Кіно-афіша — ЛР №1 (HTML5).</p>
+  </footer>
+</body>
+</html>
