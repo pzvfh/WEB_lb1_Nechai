@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="uk">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,26 +14,35 @@
   <meta property="og:url" content="https://example.com/cinema-poster/contacts.html">
 
   <title>Кіно-афіша | Контакти</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
   <header>
+    <div class="container">
     <h1>Контакти</h1>
 
-    <nav aria-label="Головна навігація">
-      <ul>
-        <li><a href="index.html">Головна</a></li>
-        <li><a href="catalog.html">Каталог</a></li>
-        <li><a href="contacts.html" aria-current="page">Контакти</a></li>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" href="index.html">Головна</a></li>
+        <li class="nav__item"><a class="nav__link " href="catalog.html">Каталог</a></li>
+        <li class="nav__item"><a class="nav__link active" href="contacts.html">Контакти</a></li>
       </ul>
     </nav>
+    </div>
   </header>
 
   <main>
+    <div class="container">
     <section aria-labelledby="info-title">
       <h2 id="info-title">Наші контакти</h2>
       <p>Email: <a href="mailto:cinema.poster@example.com">cinema@gmail.com</a></p>
-      <p>Телефон (приклад): +380501234567</p>
+      <p>Телефон: +380501234567</p>
     </section>
 
     
@@ -127,10 +137,13 @@
       <img src="assets/posters/contact.jpg" width="1100" height="550"
            alt="Тематичне зображення: зал кінотеатру">
     </section>
+    </div>
   </main>
 
   <footer>
+    <div class="container">
     <p>© Кіно-афіша — Контакти (HTML5).</p>
+  </div>
   </footer>
 </body>
 </html>
