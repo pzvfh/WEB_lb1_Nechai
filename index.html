@@ -17,13 +17,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- <link rel="stylesheet" href="css/styles.css"> -->
+  <link rel="stylesheet" href="css/styles3.css">
 </head>
 
 <body>
-  <header>
-    <div class="container">
-      <h1>Кіно-афіша</h1>
+  <header class="site-header">
+    <div class="container header__inner">
+      <div class="brand">
+        <h1>Кіно-афіша</h1>
+      </div>
+
+      <input class="nav-toggle" type="checkbox" id="nav-toggle">
+      <label class="burger" for="nav-toggle" aria-label="Відкрити меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
 
       <nav class="nav" aria-label="Головна навігація">
         <ul class="nav__list">
@@ -36,17 +46,20 @@
   </header>
 
   <main id="content">
-    <div class="container">
-      <section aria-labelledby="about-title" class="card">
+    <div class="container home-grid">
+      <section class="card home-hero" aria-labelledby="about-title">
         <h2 id="about-title">Про сайт</h2>
         <p>
-          Тут зібрані фільми з коротким описом та рейтингом.
-          У <a href="catalog.html">каталозі</a> можна перейти до потрібного жанру.
+          Тут зібрані фільми з коротким описом, рейтингом і поділом за жанрами.
+          У <a href="catalog.html">каталозі</a> можна швидко перейти до потрібної категорії.
+        </p>
+        <p>
+          Сторінка адаптована для смартфонів, планшетів і десктопів, а також підтримує темну тему.
         </p>
       </section>
 
-      <section aria-labelledby="price-title" class="card">
-        <h2 id="price-title">Прайс квитків (приклад)</h2>
+      <section class="card home-prices" aria-labelledby="price-title">
+        <h2 id="price-title">Прайс квитків</h2>
         <table>
           <caption>Ціни на квитки (умовний приклад)</caption>
           <thead>
@@ -70,11 +83,17 @@
               <td>8 €</td>
               <td>За посвідченням</td>
             </tr>
+            <tr>
+              <td>Дитячий</td>
+              <td>5 €</td>
+              <td>7 €</td>
+              <td>До 12 років</td>
+            </tr>
           </tbody>
         </table>
       </section>
 
-      <section aria-labelledby="media-title" class="card">
+      <section class="card home-media" aria-labelledby="media-title">
         <h2 id="media-title">Мультимедіа</h2>
 
         <article aria-labelledby="video-title">
@@ -84,20 +103,41 @@
             Ваш браузер не підтримує відео.
           </video>
         </article>
-      </section> 
+      </section>
 
-      <section aria-labelledby="img-title" class="card">
+      <aside class="card home-sidebar" aria-labelledby="sidebar-title">
+        <h2 id="sidebar-title">Швидкий вибір</h2>
+        <p>Перейди одразу до найпопулярніших жанрів:</p>
+        <ul class="sidebar-list">
+          <li><a href="catalog.html#action">Екшн</a></li>
+          <li><a href="catalog.html#drama">Драма</a></li>
+          <li><a href="catalog.html#comedy">Комедія</a></li>
+          <li><a href="catalog.html#horror">Жахи</a></li>
+          <li><a href="catalog.html#detective">Детектив</a></li>
+          <li><a href="catalog.html#sci-fi">Sci-Fi</a></li>
+        </ul>
+      </aside>
+
+      <section class="card home-image" aria-labelledby="img-title">
         <h2 id="img-title">Тематичне зображення</h2>
-        <img src="assets/posters/sample.jpg"
-             width="1100" height="550"
-             alt="Тематичне зображення: кінотеатр, екран та попкорн">
+        <img
+          src="assets/posters/sample.jpg"
+          width="1100"
+          height="550"
+          alt="Тематичне зображення: кінотеатр, екран та попкорн">
       </section>
     </div>
   </main>
 
-  <footer>
-    <div class="container">
-      <p>© Кіно-афіша — ЛР №1 (HTML5).</p>
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p>© Кіно-афіша — Практична робота №1.</p>
+
+      <div class="socials" aria-label="Соціальні мережі">
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <a href="#">Telegram</a>
+      </div>
     </div>
   </footer>
 </body>

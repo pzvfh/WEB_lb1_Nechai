@@ -1,16 +1,9 @@
 <!doctype html>
 <html lang="uk">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="css/styles.css">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Каталог фільмів: описи, рейтинги та навігація за жанрами.">
-
 
   <meta property="og:title" content="Кіно-афіша — Каталог">
   <meta property="og:description" content="Перехід до жанрів: екшн, драма, комедія, жахи, детектив, sci-fi.">
@@ -19,109 +12,119 @@
   <meta property="og:url" content="https://example.com/cinema-poster/catalog.html">
 
   <title>Кіно-афіша | Каталог</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- <link rel="stylesheet" href="css/styles.css"> -->
+  <link rel="stylesheet" href="css/styles3.css">
 </head>
 
 <body>
-  <header>
-    <div class="container">
-    <h1>Каталог фільмів</h1>
-    
-    <nav class="nav">
-      <ul class="nav__list">
-        <li class="nav__item"><a class="nav__link" href="index.html">Головна</a></li>
-        <li class="nav__item"><a class="nav__link active" href="catalog.html">Каталог</a></li>
-        <li class="nav__item"><a class="nav__link" href="contacts.html">Контакти</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container header__inner">
+      <div class="brand">
+        <h1>Каталог фільмів</h1>
+      </div>
 
-    <nav aria-label="Пошук за жанром">
-      <p><strong>Жанри:</strong></p>
-      <ul>
-        <li><a href="#action">Екшн</a></li>
-        <li><a href="#drama">Драма</a></li>
-        <li><a href="#comedy">Комедія</a></li>
-        <li><a href="#horror">Жахи</a></li>
-        <li><a href="#detective">Детектив</a></li>
-        <li><a href="#sci-fi">Sci-Fi</a></li>
-      </ul>
-    </nav>
-  </div>
+      <input class="nav-toggle" type="checkbox" id="nav-toggle">
+      <label class="burger" for="nav-toggle" aria-label="Відкрити меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="nav" aria-label="Головна навігація">
+        <ul class="nav__list">
+          <li class="nav__item"><a class="nav__link" href="index.html">Головна</a></li>
+          <li class="nav__item"><a class="nav__link active" href="catalog.html">Каталог</a></li>
+          <li class="nav__item"><a class="nav__link" href="contacts.html">Контакти</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
     <div class="container">
-<section id="action" aria-labelledby="action-title">
-  <h2 id="action-title">Екшн</h2>
+      <section class="card" aria-labelledby="genres-title">
+        <h2 id="genres-title">Пошук за жанрами</h2>
+        <ul class="genre-list">
+          <li><a href="#action">Екшн</a></li>
+          <li><a href="#drama">Драма</a></li>
+          <li><a href="#comedy">Комедія</a></li>
+          <li><a href="#horror">Жахи</a></li>
+          <li><a href="#detective">Детектив</a></li>
+          <li><a href="#sci-fi">Sci-Fi</a></li>
+        </ul>
+      </section>
 
-  <article>
-    <h3>Mad Max: Fury Road (2015)</h3>
-    <p><strong>Рейтинг:</strong> 8.1/10</p>
-    <p><strong>Опис:</strong> шалена гонитва пустелею, де виживання — це швидкість і рішення за секунду.</p>
-    <img src="assets/posters/mad-max-fury-road.jpg" width="640" height="360" alt="Постер Mad Max: Fury Road">
-  </article>
-</section>
+      <section aria-labelledby="catalog-title">
+        <h2 id="catalog-title">Добірка фільмів</h2>
 
-<section id="drama" aria-labelledby="drama-title">
-  <h2 id="drama-title">Драма</h2>
+        <div class="catalog-grid">
+          <article id="action" class="card catalog-card">
+            <h3>Mad Max: Fury Road (2015)</h3>
+            <p><strong>Жанр:</strong> Екшн</p>
+            <p><strong>Рейтинг:</strong> 8.1/10</p>
+            <p><strong>Опис:</strong> шалена гонитва пустелею, де виживання залежить від швидкості та миттєвих рішень.</p>
+            <img src="assets/posters/mad-max-fury-road.jpg" width="640" height="360" alt="Постер Mad Max: Fury Road">
+          </article>
 
-  <article>
-    <h3>The Shawshank Redemption (1994)</h3>
-    <p><strong>Рейтинг:</strong> 9.2/10</p>
-    <p><strong>Опис:</strong> історія надії та гідності в умовах, де здаватися — найпростіше.</p>
-    <img src="assets/posters/the-shawshank-redemption.jpg" width="640" height="360" alt="Постер The Shawshank Redemption">
-  </article>
-</section>
+          <article id="drama" class="card catalog-card">
+            <h3>The Shawshank Redemption (1994)</h3>
+            <p><strong>Жанр:</strong> Драма</p>
+            <p><strong>Рейтинг:</strong> 9.2/10</p>
+            <p><strong>Опис:</strong> історія надії, гідності та витримки навіть у найважчих обставинах.</p>
+            <img src="assets/posters/the-shawshank-redemption.jpg" width="640" height="360" alt="Постер The Shawshank Redemption">
+          </article>
 
-<section id="comedy" aria-labelledby="comedy-title">
-  <h2 id="comedy-title">Комедія</h2>
+          <article id="comedy" class="card catalog-card">
+            <h3>The Grand Budapest Hotel (2014)</h3>
+            <p><strong>Жанр:</strong> Комедія</p>
+            <p><strong>Рейтинг:</strong> 8.0/10</p>
+            <p><strong>Опис:</strong> стильна іронічна історія про пригоди консьєржа та його молодого помічника.</p>
+            <img src="assets/posters/the-grand-budapest-hotel.jpg" width="640" height="360" alt="Постер The Grand Budapest Hotel">
+          </article>
 
-  <article>
-    <h3>The Grand Budapest Hotel (2014)</h3>
-    <p><strong>Рейтинг:</strong> 8.0/10</p>
-    <p><strong>Опис:</strong> стильна іронічна історія про пригоди консьєржа та його учня.</p>
-    <img src="assets/posters/the-grand-budapest-hotel.jpg" width="640" height="360" alt="Постер The Grand Budapest Hotel">
-  </article>
-</section>
+          <article id="horror" class="card catalog-card">
+            <h3>Get Out (2017)</h3>
+            <p><strong>Жанр:</strong> Жахи</p>
+            <p><strong>Рейтинг:</strong> 7.8/10</p>
+            <p><strong>Опис:</strong> візит до родини дівчини перетворюється на тривожну пастку з дивними правилами.</p>
+            <img src="assets/posters/get-out.jpg" width="640" height="360" alt="Постер Get Out">
+          </article>
 
-<section id="horror" aria-labelledby="horror-title">
-  <h2 id="horror-title">Жахи</h2>
+          <article id="detective" class="card catalog-card">
+            <h3>Knives Out (2019)</h3>
+            <p><strong>Жанр:</strong> Детектив</p>
+            <p><strong>Рейтинг:</strong> 7.9/10</p>
+            <p><strong>Опис:</strong> розслідування смерті письменника, у якому кожен герой щось приховує.</p>
+            <img src="assets/posters/knives-out.jpg" width="640" height="360" alt="Постер Knives Out">
+          </article>
 
-  <article>
-    <h3>Get Out (2017)</h3>
-    <p><strong>Рейтинг:</strong> 7.8/10</p>
-    <p><strong>Опис:</strong> візит до родини дівчини перетворюється на тривожну пастку з дуже дивними правилами.</p>
-    <img src="assets/posters/get-out.jpg" width="640" height="360" alt="Постер Get Out">
-  </article>
-</section>
-
-<section id="detective" aria-labelledby="detective-title">
-  <h2 id="detective-title">Детектив</h2>
-
-  <article>
-    <h3>Knives Out (2019)</h3>
-    <p><strong>Рейтинг:</strong> 7.9/10</p>
-    <p><strong>Опис:</strong> розслідування смерті письменника, де кожен має мотив і кожен щось приховує.</p>
-    <img src="assets/posters/knives-out.jpg" width="640" height="360" alt="Постер Knives Out">
-  </article>
-</section>
-
-<section id="sci-fi" aria-labelledby="scifi-title">
-  <h2 id="scifi-title">Sci-Fi</h2>
-
-  <article>
-    <h3>Interstellar (2014)</h3>
-    <p><strong>Рейтинг:</strong> 8.6/10</p>
-    <p><strong>Опис:</strong> місія за межі Сонячної системи, коли на Землі вже майже не залишилося шансів.</p>
-    <img src="assets/posters/interstellar.jpg" width="640" height="360" alt="Постер Interstellar">
-  </article>
-  </div>
+          <article id="sci-fi" class="card catalog-card">
+            <h3>Interstellar (2014)</h3>
+            <p><strong>Жанр:</strong> Sci-Fi</p>
+            <p><strong>Рейтинг:</strong> 8.6/10</p>
+            <p><strong>Опис:</strong> місія за межі Сонячної системи починається тоді, коли Земля майже втратила шанс на порятунок.</p>
+            <img src="assets/posters/interstellar.jpg" width="640" height="360" alt="Постер Interstellar">
+          </article>
+        </div>
+      </section>
+    </div>
   </main>
 
-  <footer>
-    <div class="container">
-    <p>© Кіно-афіша — Каталог (HTML5).</p>
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p>© Кіно-афіша — Каталог.</p>
+
+      <div class="socials" aria-label="Соціальні мережі">
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <a href="#">Telegram</a>
+      </div>
     </div>
   </footer>
-  
 </body>
 </html>

@@ -1,11 +1,9 @@
 <!doctype html>
 <html lang="uk">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Контакти кіно-афіші та форма зворотного зв'язку з валідацією.">
-
 
   <meta property="og:title" content="Кіно-афіша — Контакти">
   <meta property="og:description" content="Форма з fieldset/legend, radio/checkbox, select/optgroup, required/pattern.">
@@ -19,131 +17,158 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- <link rel="stylesheet" href="css/styles.css"> -->
+  <link rel="stylesheet" href="css/styles3.css">
 </head>
 
 <body>
-  <header>
-    <div class="container">
-    <h1>Контакти</h1>
+  <header class="site-header">
+    <div class="container header__inner">
+      <div class="brand">
+        <h1>Контакти</h1>
+      </div>
 
-    <nav class="nav">
-      <ul class="nav__list">
-        <li class="nav__item"><a class="nav__link" href="index.html">Головна</a></li>
-        <li class="nav__item"><a class="nav__link " href="catalog.html">Каталог</a></li>
-        <li class="nav__item"><a class="nav__link active" href="contacts.html">Контакти</a></li>
-      </ul>
-    </nav>
+      <input class="nav-toggle" type="checkbox" id="nav-toggle">
+      <label class="burger" for="nav-toggle" aria-label="Відкрити меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="nav" aria-label="Головна навігація">
+        <ul class="nav__list">
+          <li class="nav__item"><a class="nav__link" href="index.html">Головна</a></li>
+          <li class="nav__item"><a class="nav__link" href="catalog.html">Каталог</a></li>
+          <li class="nav__item"><a class="nav__link active" href="contacts.html">Контакти</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
   <main>
-    <div class="container">
-    <section aria-labelledby="info-title">
-      <h2 id="info-title">Наші контакти</h2>
-      <p>Email: <a href="mailto:cinema.poster@example.com">cinema@gmail.com</a></p>
-      <p>Телефон: +380501234567</p>
-    </section>
+    <div class="container contacts-grid">
+      <section class="card contacts-info" aria-labelledby="info-title">
+        <h2 id="info-title">Наші контакти</h2>
+        <p>Email: <a href="mailto:cinema.poster@example.com">cinema@gmail.com</a></p>
+        <p>Телефон: <a href="tel:+380501234567">+380501234567</a></p>
+        <p>Години відповіді: щодня з 10:00 до 20:00.</p>
+      </section>
 
-    
-    <section aria-labelledby="form-title">
-      <h2 id="form-title">Форма зворотного зв’язку</h2>
+      <section class="card contacts-form" aria-labelledby="form-title">
+        <h2 id="form-title">Форма зворотного зв’язку</h2>
 
-      <form action="#" method="post">
-        <fieldset>
-          <legend>1 Контактні дані</legend>
+        <form action="#" method="post">
+          <fieldset>
+            <legend>1) Контактні дані</legend>
 
-          <p>
-            <label for="name">Ім’я</label><br>
-            <input id="name" name="name" type="text" required>
-          </p>
+            <p>
+              <label for="name">Ім’я</label>
+              <input id="name" name="name" type="text" required>
+            </p>
 
-          <p>
-            <label for="email">Email</label><br>
-            <input id="email" name="email" type="email" required>
-          </p>
+            <p>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required>
+            </p>
 
-          <p>
-            <label for="phone">Телефон</label><br>
-            <input id="phone" name="phone" type="tel"
-                   required
-                   pattern="^\+380\d{9}$"
-                   placeholder="+380501234567"
-                   aria-describedby="phoneHint">
-            <small id="phoneHint">Формат: +380 і 9 цифр (наприклад, +380501234567).</small>
-          </p>
-        </fieldset>
+            <p>
+              <label for="phone">Телефон</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                required
+                pattern="^\+380\d{9}$"
+                placeholder="+380501234567"
+                aria-describedby="phoneHint">
+              <small id="phoneHint">Формат: +380 і 9 цифр, наприклад +380501234567.</small>
+            </p>
+          </fieldset>
 
-        <fieldset>
-          <legend>2) Як отримати відповідь?</legend>
+          <fieldset>
+            <legend>2) Як отримати відповідь?</legend>
 
-          <p>
-            <input id="replyEmail" name="replyMethod" type="radio" value="email" required>
-            <label for="replyEmail">На email</label>
-          </p>
+            <div class="choice-group">
+              <label class="choice-item" for="replyEmail">
+                <input id="replyEmail" name="replyMethod" type="radio" value="email" required>
+                <span>На email</span>
+              </label>
 
-          <p>
-            <input id="replyPhone" name="replyMethod" type="radio" value="phone">
-            <label for="replyPhone">По телефону</label>
-          </p>
-        </fieldset>
+              <label class="choice-item" for="replyPhone">
+                <input id="replyPhone" name="replyMethod" type="radio" value="phone">
+                <span>По телефону</span>
+              </label>
+            </div>
+          </fieldset>
 
-        <fieldset>
-          <legend>3) Тема звернення</legend>
+          <fieldset>
+            <legend>3) Тема звернення</legend>
 
-          <p>
-            <label for="topic">Обери тему</label><br>
-            <select id="topic" name="topic" required>
-              <option value="" selected disabled>Оберіть варіант</option>
-              <optgroup label="Каталог">
-                <option value="add-movie">Додати фільм</option>
-                <option value="edit-movie">Виправити опис/рейтинг</option>
-              </optgroup>
-              <optgroup label="Сповіщення">
-                <option value="subscribe">Підписка на оновлення</option>
-                <option value="unsubscribe">Відписка</option>
-              </optgroup>
-            </select>
-          </p>
+            <p>
+              <label for="topic">Обери тему</label>
+              <select id="topic" name="topic" required>
+                <option value="" selected disabled>Оберіть варіант</option>
+                <optgroup label="Каталог">
+                  <option value="add-movie">Додати фільм</option>
+                  <option value="edit-movie">Виправити опис або рейтинг</option>
+                </optgroup>
+                <optgroup label="Сповіщення">
+                  <option value="subscribe">Підписка на оновлення</option>
+                  <option value="unsubscribe">Відписка</option>
+                </optgroup>
+              </select>
+            </p>
 
-          <p>
-            <strong>Додатково:</strong><br>
-            <input id="agreeNews" name="extras" type="checkbox" value="news">
-            <label for="agreeNews">Хочу отримувати новини афіші</label><br>
+            <p><strong>Додатково:</strong></p>
+            <div class="choice-group">
+              <label class="choice-item" for="agreeNews">
+                <input id="agreeNews" name="extras" type="checkbox" value="news">
+                <span>Хочу отримувати новини афіші</span>
+              </label>
 
-            <input id="agreeTop" name="extras" type="checkbox" value="top">
-            <label for="agreeTop">Хочу “топ фільми тижня”</label>
-          </p>
-        </fieldset>
+              <label class="choice-item" for="agreeTop">
+                <input id="agreeTop" name="extras" type="checkbox" value="top">
+                <span>Хочу “топ фільми тижня”</span>
+              </label>
+            </div>
+          </fieldset>
 
-        <!-- Поля базового рівня: Ім'я, Email, Повідомлення -->
-        <fieldset>
-          <legend>4) Повідомлення</legend>
-          <p>
-            <label for="message">Текст повідомлення</label><br>
-            <textarea id="message" name="message" required rows="6"></textarea>
-          </p>
-        </fieldset>
+          <fieldset>
+            <legend>4) Повідомлення</legend>
+            <p>
+              <label for="message">Текст повідомлення</label>
+              <textarea id="message" name="message" required rows="6"></textarea>
+            </p>
+          </fieldset>
 
-        <p>
-          <button type="submit">Надіслати</button>
-          <button type="reset">Очистити</button>
-        </p>
-      </form>
-    </section>
+          <div class="form-actions">
+            <button type="submit">Надіслати</button>
+            <button type="reset">Очистити</button>
+          </div>
+        </form>
+      </section>
 
-    <section aria-labelledby="img-title">
-      <h2 id="img-title">Тематичне зображення</h2>
-      <img src="assets/posters/contact.jpg" width="1100" height="550"
-           alt="Тематичне зображення: зал кінотеатру">
-    </section>
+      <section class="card contacts-image" aria-labelledby="img-title">
+        <h2 id="img-title">Тематичне зображення</h2>
+        <img
+          src="assets/posters/contact.jpg"
+          width="1100"
+          height="550"
+          alt="Тематичне зображення: зал кінотеатру">
+      </section>
     </div>
   </main>
 
-  <footer>
-    <div class="container">
-    <p>© Кіно-афіша — Контакти (HTML5).</p>
-  </div>
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p>© Кіно-афіша — Контакти.</p>
+
+      <div class="socials" aria-label="Соціальні мережі">
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <a href="#">Telegram</a>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
