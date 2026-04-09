@@ -17,84 +17,86 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-  <!-- <link rel="stylesheet" href="css/styles.css"> -->
-  <link rel="stylesheet" href="css/styles3.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="container header__inner">
-      <div class="brand">
-        <h1>Кіно-афіша</h1>
-      </div>
+  <header class="bg-slate-900 text-white">
+  <div class="max-w-6xl mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <a href="index.html" class="text-xl font-bold">Кіно-афіша</a>
 
-      <input class="nav-toggle" type="checkbox" id="nav-toggle">
-      <label class="burger" for="nav-toggle" aria-label="Відкрити меню">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
+      <button id="menuBtn" class="md:hidden rounded-lg border border-slate-600 px-3 py-2">
+        ☰
+      </button>
 
-      <nav class="nav" aria-label="Головна навігація">
-        <ul class="nav__list">
-          <li class="nav__item"><a class="nav__link active" href="index.html">Головна</a></li>
-          <li class="nav__item"><a class="nav__link" href="catalog.html">Каталог</a></li>
-          <li class="nav__item"><a class="nav__link" href="contacts.html">Контакти</a></li>
-        </ul>
+      <nav class="hidden md:flex gap-6">
+        <a href="index.html" class="transition hover:text-cyan-300">Головна</a>
+        <a href="catalog.html" class="transition hover:text-cyan-300">Каталог</a>
+        <a href="contacts.html" class="transition hover:text-cyan-300">Контакти</a>
       </nav>
     </div>
+
+    <nav id="mobileMenu" class="hidden flex-col gap-3 pt-4 md:hidden">
+      <a href="index.html" class="block transition hover:text-cyan-300">Головна</a>
+      <a href="catalog.html" class="block transition hover:text-cyan-300">Каталог</a>
+      <a href="contacts.html" class="block transition hover:text-cyan-300">Контакти</a>
+    </nav>
+  </div>
   </header>
 
   <main id="content">
-    <div class="container home-grid">
-      <section class="card home-hero" aria-labelledby="about-title">
-        <h2 id="about-title">Про сайт</h2>
-        <p>
+    <main class="py-6">
+    <div class="max-w-6xl mx-auto px-4 py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <section class="lg:col-span-8 rounded-2xl bg-white p-6 shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl" aria-labelledby="about-title">
+        <h2 class="text-2xl font-bold mb-4">Про сайт</h2>
+        <p class="text-lg leading-7 text-slate-700">
           Тут зібрані фільми з коротким описом, рейтингом і поділом за жанрами.
           У <a href="catalog.html">каталозі</a> можна швидко перейти до потрібної категорії.
         </p>
-        <p>
+        <p class="text-lg leading-7 text-slate-700">
           Сторінка адаптована для смартфонів, планшетів і десктопів, а також підтримує темну тему.
         </p>
       </section>
 
-      <section class="card home-prices" aria-labelledby="price-title">
-        <h2 id="price-title">Прайс квитків</h2>
-        <table>
+      <section class="lg:col-span-7 rounded-2xl bg-white p-6 shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl" aria-labelledby="price-title">
+        <h2 class="text-2xl font-bold mb-4">Прайс квитків</h2>
+        <table class="min-w-full border-collapse text-left text-sm">
           <caption>Ціни на квитки (умовний приклад)</caption>
-          <thead>
-            <tr>
-              <th scope="col">Тип</th>
-              <th scope="col">Будні</th>
-              <th scope="col">Вихідні</th>
-              <th scope="col">Примітка</th>
+          <thead class="bg-cyan-100">
+            <tr class="odd:bg-slate-50 hover:bg-cyan-50 transition">
+              <th class="px-4 py-3 font-semibold text-slate-800" scope="col">Тип</th>
+              <th class="px-4 py-3 font-semibold text-slate-800" scope="col">Будні</th>
+              <th class="px-4 py-3 font-semibold text-slate-800" scope="col">Вихідні</th>
+              <th class="px-4 py-3 font-semibold text-slate-800"scope="col">Примітка</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Стандарт</td>
-              <td>8 €</td>
-              <td>10 €</td>
-              <td>2D сеанси</td>
+            <tr class="odd:bg-slate-50 hover:bg-cyan-50 transition">
+              <td class="px-4 py-3 border-t border-slate-200">Стандарт</td>
+              <td class="px-4 py-3 border-t border-slate-200">8 €</td>
+              <td class="px-4 py-3 border-t border-slate-200">10 €</td>
+              <td class="px-4 py-3 border-t border-slate-200">2D сеанси</td>
             </tr>
-            <tr>
-              <td>Студент</td>
-              <td>6 €</td>
-              <td>8 €</td>
-              <td>За посвідченням</td>
+            <tr class="odd:bg-slate-50 hover:bg-cyan-50 transition">
+              <td class="px-4 py-3 border-t border-slate-200">Студент</td>
+              <td class="px-4 py-3 border-t border-slate-200">6 €</td>
+              <td class="px-4 py-3 border-t border-slate-200">8 €</td>
+              <td class="px-4 py-3 border-t border-slate-200">За посвідченням</td>
             </tr>
-            <tr>
-              <td>Дитячий</td>
-              <td>5 €</td>
-              <td>7 €</td>
-              <td>До 12 років</td>
+            <tr class="odd:bg-slate-50 hover:bg-cyan-50 transition">
+              <td class="px-4 py-3 border-t border-slate-200">Дитячий</td>
+              <td class="px-4 py-3 border-t border-slate-200">5 €</td>
+              <td class="px-4 py-3 border-t border-slate-200">7 €</td>
+              <td class="px-4 py-3 border-t border-slate-200">До 12 років</td>
             </tr>
           </tbody>
         </table>
       </section>
 
-      <section class="card home-media" aria-labelledby="media-title">
-        <h2 id="media-title">Мультимедіа</h2>
+      <section class="lg:col-span-5 rounded-2xl bg-white p-6 shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl" aria-labelledby="media-title">
+        <h2 class="text-2xl font-bold mb-4">Мультимедіа</h2>
 
         <article aria-labelledby="video-title">
           <h3 id="video-title">Відео (трейлер)</h3>
@@ -105,21 +107,21 @@
         </article>
       </section>
 
-      <aside class="card home-sidebar" aria-labelledby="sidebar-title">
-        <h2 id="sidebar-title">Швидкий вибір</h2>
-        <p>Перейди одразу до найпопулярніших жанрів:</p>
-        <ul class="sidebar-list">
-          <li><a href="catalog.html#action">Екшн</a></li>
-          <li><a href="catalog.html#drama">Драма</a></li>
-          <li><a href="catalog.html#comedy">Комедія</a></li>
-          <li><a href="catalog.html#horror">Жахи</a></li>
-          <li><a href="catalog.html#detective">Детектив</a></li>
-          <li><a href="catalog.html#sci-fi">Sci-Fi</a></li>
-        </ul>
+      <aside class="lg:col-span-4 rounded-2xl bg-white p-6 shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl" aria-labelledby="sidebar-title">
+        <h2 class="text-2xl font-bold mb-4">Жанри</h2>
+        <p class="text-lg leading-7 text-slate-700">Обери категорію та швидко перейди до потрібного розділу:</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="catalog.html#action" class="rounded-full bg-cyan-100 px-4 py-2 text-sm font-medium text-cyan-800 transition hover:bg-cyan-200">Екшн</a>
+          <a href="catalog.html#drama" class="rounded-full bg-cyan-100 px-4 py-2 text-sm font-medium text-cyan-800 transition hover:bg-cyan-200">Драма</a>
+          <a href="catalog.html#comedy" class="rounded-full bg-cyan-100 px-4 py-2 text-sm font-medium text-cyan-800 transition hover:bg-cyan-200">Комедія</a>
+          <a href="catalog.html#horror" class="rounded-full bg-cyan-100 px-4 py-2 text-sm font-medium text-cyan-800 transition hover:bg-cyan-200">Жахи</a>
+          <a href="catalog.html#detective" class="rounded-full bg-cyan-100 px-4 py-2 text-sm font-medium text-cyan-800 transition hover:bg-cyan-200">Детектив</a>
+          <a href="catalog.html#sci-fi" class="rounded-full bg-cyan-100 px-4 py-2 text-sm font-medium text-cyan-800 transition hover:bg-cyan-200">Sci-Fi</a>
+        </div>
       </aside>
 
-      <section class="card home-image" aria-labelledby="img-title">
-        <h2 id="img-title">Тематичне зображення</h2>
+      <section class="lg:col-span-12 rounded-2xl bg-white p-6 shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl" aria-labelledby="img-title">
+        <h2 class="text-2xl font-bold mb-4">Тематичне зображення</h2>
         <img
           src="assets/posters/sample.jpg"
           width="1100"
@@ -127,18 +129,36 @@
           alt="Тематичне зображення: кінотеатр, екран та попкорн">
       </section>
     </div>
+    </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer__inner">
-      <p>© Кіно-афіша — Практична робота №1.</p>
-
-      <div class="socials" aria-label="Соціальні мережі">
-        <a href="#">Instagram</a>
-        <a href="#">YouTube</a>
-        <a href="#">Telegram</a>
+<footer class="mt-10 border-t border-slate-200 bg-slate-900 text-white">
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+      
+      <div>
+        <h2 class="text-xl font-bold">Кіно-афіша</h2>
       </div>
+
+      <nav class="flex flex-col gap-2 text-sm md:items-end">
+        <a href="index.html" class="transition hover:text-cyan-300">Головна</a>
+        <a href="catalog.html" class="transition hover:text-cyan-300">Каталог</a>
+        <a href="contacts.html" class="transition hover:text-cyan-300">Контакти</a>
+      </nav>
     </div>
-  </footer>
+
+    <div class="mt-6 border-t border-slate-700 pt-4 text-center text-sm text-slate-400">
+      © 2026 Кіно-афіша. Усі права захищені.
+    </div>
+  </div>
+</footer>
 </body>
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
 </html>

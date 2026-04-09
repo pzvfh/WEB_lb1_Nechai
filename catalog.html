@@ -17,114 +17,171 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-  <!-- <link rel="stylesheet" href="css/styles.css"> -->
-  <link rel="stylesheet" href="css/styles3.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="container header__inner">
-      <div class="brand">
-        <h1>Каталог фільмів</h1>
-      </div>
+  <header class="bg-slate-900 text-white">
+  <div class="max-w-6xl mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <a href="catalog.html" class="text-xl font-bold">Каталог фільмів</a>
 
-      <input class="nav-toggle" type="checkbox" id="nav-toggle">
-      <label class="burger" for="nav-toggle" aria-label="Відкрити меню">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
+      <button id="menuBtn" class="md:hidden rounded-lg border border-slate-600 px-3 py-2">
+        ☰
+      </button>
 
-      <nav class="nav" aria-label="Головна навігація">
-        <ul class="nav__list">
-          <li class="nav__item"><a class="nav__link" href="index.html">Головна</a></li>
-          <li class="nav__item"><a class="nav__link active" href="catalog.html">Каталог</a></li>
-          <li class="nav__item"><a class="nav__link" href="contacts.html">Контакти</a></li>
-        </ul>
+      <nav class="hidden md:flex gap-6">
+        <a href="index.html" class="transition hover:text-cyan-300">Головна</a>
+        <a href="catalog.html" class="transition hover:text-cyan-300">Каталог</a>
+        <a href="contacts.html" class="transition hover:text-cyan-300">Контакти</a>
       </nav>
+    </div>
+
+    <nav id="mobileMenu" class="hidden flex-col gap-3 pt-4 md:hidden">
+      <a href="index.html" class="block transition hover:text-cyan-300">Головна</a>
+      <a href="catalog.html" class="block transition hover:text-cyan-300">Каталог</a>
+      <a href="contacts.html" class="block transition hover:text-cyan-300">Контакти</a>
+    </nav>
     </div>
   </header>
 
   <main>
-    <div class="container">
-      <section class="card" aria-labelledby="genres-title">
-        <h2 id="genres-title">Пошук за жанрами</h2>
-        <ul class="genre-list">
-          <li><a href="#action">Екшн</a></li>
-          <li><a href="#drama">Драма</a></li>
-          <li><a href="#comedy">Комедія</a></li>
-          <li><a href="#horror">Жахи</a></li>
-          <li><a href="#detective">Детектив</a></li>
-          <li><a href="#sci-fi">Sci-Fi</a></li>
+    <div class="max-w-6xl mx-auto px-4 py-8">
+      <section class="rounded-2xl bg-white p-6 shadow-lg">
+        <h1 class="text-3xl font-bold text-slate-900">Пошук за жанрами</h1>
+      <p class="mt-3 text-base leading-7 text-slate-600">
+        Обери жанр або переглянь добірку популярних фільмів з коротким описом і рейтингом.
+      </p>
+        <ul class="mt-5 flex flex-wrap gap-3">
+          <li><a class="inline-block rounded-full bg-cyan-100 px-4 py-2 text-sm font-medium text-cyan-800 transition hover:bg-cyan-200" href="#action">Екшн</a></li>
+          <li><a class="inline-block rounded-full bg-cyan-100 px-4 py-2 text-sm font-medium text-cyan-800 transition hover:bg-cyan-200" href="#drama">Драма</a></li>
+          <li><a class="inline-block rounded-full bg-cyan-100 px-4 py-2 text-sm font-medium text-cyan-800 transition hover:bg-cyan-200" href="#comedy">Комедія</a></li>
+          <li><a class="inline-block rounded-full bg-cyan-100 px-4 py-2 text-sm font-medium text-cyan-800 transition hover:bg-cyan-200" href="#horror">Жахи</a></li>
+          <li><a class="inline-block rounded-full bg-cyan-100 px-4 py-2 text-sm font-medium text-cyan-800 transition hover:bg-cyan-200" href="#detective">Детектив</a></li>
+          <li><a class="inline-block rounded-full bg-cyan-100 px-4 py-2 text-sm font-medium text-cyan-800 transition hover:bg-cyan-200" href="#sci-fi">Sci-Fi</a></li>
         </ul>
       </section>
 
-      <section aria-labelledby="catalog-title">
-        <h2 id="catalog-title">Добірка фільмів</h2>
+      <section class="mt-8">
+        <h2 class="text-2xl font-bold text-slate-900 mb-6">Добірка фільмів</h2>
 
-        <div class="catalog-grid">
-          <article id="action" class="card catalog-card">
-            <h3>Mad Max: Fury Road (2015)</h3>
-            <p><strong>Жанр:</strong> Екшн</p>
-            <p><strong>Рейтинг:</strong> 8.1/10</p>
-            <p><strong>Опис:</strong> шалена гонитва пустелею, де виживання залежить від швидкості та миттєвих рішень.</p>
-            <img src="assets/posters/mad-max-fury-road.jpg" width="640" height="360" alt="Постер Mad Max: Fury Road">
-          </article>
+        <div class="p-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+           <article id="action" class="overflow-hidden rounded-2xl bg-white shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
+          <img src="assets/posters/mad-max-fury-road.jpg" alt="Постер Mad Max: Fury Road" class="h-56 w-full object-cover">
+          <div class="p-5">
+            <h3 class="text-2xl font-bold text-slate-900">Mad Max: Fury Road (2015)</h3>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Жанр: Екшн</span>
+              <span class="rounded-full bg-amber-100 px-3 py-1 text-sm text-amber-800">Рейтинг: 8.1/10</span>
+            </div>
+            <p class="mt-4 text-base leading-7 text-slate-600">
+              Шалена гонитва пустелею, де виживання залежить від швидкості та миттєвих рішень.
+            </p>
+          </div>
+        </article>
 
-          <article id="drama" class="card catalog-card">
-            <h3>The Shawshank Redemption (1994)</h3>
-            <p><strong>Жанр:</strong> Драма</p>
-            <p><strong>Рейтинг:</strong> 9.2/10</p>
-            <p><strong>Опис:</strong> історія надії, гідності та витримки навіть у найважчих обставинах.</p>
-            <img src="assets/posters/the-shawshank-redemption.jpg" width="640" height="360" alt="Постер The Shawshank Redemption">
-          </article>
+        <article id="drama" class="overflow-hidden rounded-2xl bg-white shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
+          <img src="assets/posters/the-shawshank-redemption.jpg" alt="Постер The Shawshank Redemption" class="h-56 w-full object-cover">
+          <div class="p-5">
+            <h3 class="text-2xl font-bold text-slate-900">The Shawshank Redemption (1994)</h3>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Жанр: Драма</span>
+              <span class="rounded-full bg-amber-100 px-3 py-1 text-sm text-amber-800">Рейтинг: 9.2/10</span>
+            </div>
+            <p class="mt-4 text-base leading-7 text-slate-600">
+              Історія надії, гідності та витримки навіть у найважчих обставинах.
+            </p>
+          </div>
+        </article>
 
-          <article id="comedy" class="card catalog-card">
-            <h3>The Grand Budapest Hotel (2014)</h3>
-            <p><strong>Жанр:</strong> Комедія</p>
-            <p><strong>Рейтинг:</strong> 8.0/10</p>
-            <p><strong>Опис:</strong> стильна іронічна історія про пригоди консьєржа та його молодого помічника.</p>
-            <img src="assets/posters/the-grand-budapest-hotel.jpg" width="640" height="360" alt="Постер The Grand Budapest Hotel">
-          </article>
+        <article id="comedy" class="overflow-hidden rounded-2xl bg-white shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
+          <img src="assets/posters/the-grand-budapest-hotel.jpg" alt="Постер The Grand Budapest Hotel" class="h-56 w-full object-cover">
+          <div class="p-5">
+            <h3 class="text-2xl font-bold text-slate-900">The Grand Budapest Hotel (2014)</h3>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Жанр: Комедія</span>
+              <span class="rounded-full bg-amber-100 px-3 py-1 text-sm text-amber-800">Рейтинг: 8.0/10</span>
+            </div>
+            <p class="mt-4 text-base leading-7 text-slate-600">
+              Стильна іронічна історія про пригоди консьєржа та його молодого помічника.
+            </p>
+          </div>
+        </article>
 
-          <article id="horror" class="card catalog-card">
-            <h3>Get Out (2017)</h3>
-            <p><strong>Жанр:</strong> Жахи</p>
-            <p><strong>Рейтинг:</strong> 7.8/10</p>
-            <p><strong>Опис:</strong> візит до родини дівчини перетворюється на тривожну пастку з дивними правилами.</p>
-            <img src="assets/posters/get-out.jpg" width="640" height="360" alt="Постер Get Out">
-          </article>
+        <article id="horror" class="overflow-hidden rounded-2xl bg-white shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
+          <img src="assets/posters/get-out.jpg" alt="Постер Get Out" class="h-56 w-full object-cover">
+          <div class="p-5">
+            <h3 class="text-2xl font-bold text-slate-900">Get Out (2017)</h3>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Жанр: Жахи</span>
+              <span class="rounded-full bg-amber-100 px-3 py-1 text-sm text-amber-800">Рейтинг: 7.8/10</span>
+            </div>
+            <p class="mt-4 text-base leading-7 text-slate-600">
+              Візит до родини дівчини перетворюється на тривожну пастку з дивними правилами.
+            </p>
+          </div>
+        </article>
 
-          <article id="detective" class="card catalog-card">
-            <h3>Knives Out (2019)</h3>
-            <p><strong>Жанр:</strong> Детектив</p>
-            <p><strong>Рейтинг:</strong> 7.9/10</p>
-            <p><strong>Опис:</strong> розслідування смерті письменника, у якому кожен герой щось приховує.</p>
-            <img src="assets/posters/knives-out.jpg" width="640" height="360" alt="Постер Knives Out">
-          </article>
+        <article id="detective" class="overflow-hidden rounded-2xl bg-white shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
+          <img src="assets/posters/knives-out.jpg" alt="Постер Knives Out" class="h-56 w-full object-cover">
+          <div class="p-5">
+            <h3 class="text-2xl font-bold text-slate-900">Knives Out (2019)</h3>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Жанр: Детектив</span>
+              <span class="rounded-full bg-amber-100 px-3 py-1 text-sm text-amber-800">Рейтинг: 7.9/10</span>
+            </div>
+            <p class="mt-4 text-base leading-7 text-slate-600">
+              Розслідування смерті письменника, у якому кожен герой щось приховує.
+            </p>
+          </div>
+        </article>
 
-          <article id="sci-fi" class="card catalog-card">
-            <h3>Interstellar (2014)</h3>
-            <p><strong>Жанр:</strong> Sci-Fi</p>
-            <p><strong>Рейтинг:</strong> 8.6/10</p>
-            <p><strong>Опис:</strong> місія за межі Сонячної системи починається тоді, коли Земля майже втратила шанс на порятунок.</p>
-            <img src="assets/posters/interstellar.jpg" width="640" height="360" alt="Постер Interstellar">
-          </article>
+        <article id="sci-fi" class="overflow-hidden rounded-2xl bg-white shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
+          <img src="assets/posters/interstellar.jpg" alt="Постер Interstellar" class="h-56 w-full object-cover">
+          <div class="p-5">
+            <h3 class="text-2xl font-bold text-slate-900">Interstellar (2014)</h3>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Жанр: Sci-Fi</span>
+              <span class="rounded-full bg-amber-100 px-3 py-1 text-sm text-amber-800">Рейтинг: 8.6/10</span>
+            </div>
+            <p class="mt-4 text-base leading-7 text-slate-600">
+              Місія за межі Сонячної системи починається тоді, коли Земля майже втратила шанс на порятунок.
+            </p>
+          </div>
+        </article>
         </div>
       </section>
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer__inner">
-      <p>© Кіно-афіша — Каталог.</p>
-
-      <div class="socials" aria-label="Соціальні мережі">
-        <a href="#">Instagram</a>
-        <a href="#">YouTube</a>
-        <a href="#">Telegram</a>
+<footer class="mt-10 border-t border-slate-200 bg-slate-900 text-white">
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+      
+      <div>
+        <h2 class="text-xl font-bold">Каталог фільмів</h2>
       </div>
+
+      <nav class="flex flex-col gap-2 text-sm md:items-end">
+        <a href="index.html" class="transition hover:text-cyan-300">Головна</a>
+        <a href="catalog.html" class="transition hover:text-cyan-300">Каталог</a>
+        <a href="contacts.html" class="transition hover:text-cyan-300">Контакти</a>
+      </nav>
     </div>
-  </footer>
+
+    <div class="mt-6 border-t border-slate-700 pt-4 text-center text-sm text-slate-400">
+      © 2026 Кіно-афіша. Усі права захищені.
+    </div>
+  </div>
+</footer>
 </body>
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
 </html>
