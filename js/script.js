@@ -285,8 +285,9 @@ function addMovieToCart(movieCard, cartList) {
   cartList.append(clone);
 }
 
+
 function initContactForm() {
-  const form = document.getElementById("contact-form");
+  const form = document.forms.contactForm;
   const formStatus = document.getElementById("form-status");
 
   if (!form) return;
@@ -294,11 +295,52 @@ function initContactForm() {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    if (formStatus) {
-      formStatus.textContent =
-        "Форма успішно оброблена JavaScript без перезавантаження сторінки.";
+    const messageField = form.elements.message;
+    const messageText = messageField.value.toLowerCase();
+
+    // Кастомна перевірка на заборонені слова
+    if (
+      messageText.includes("спам") ||
+      messageText.includes("реклама")
+    ) {
+      messageField.setCustomValidity(
+        "Повідомлення не повинно містити слова: 'спам' або 'реклама'."
+      );
+    } else {
+      messageField.setCustomValidity("");
     }
 
-    console.log("Форма відправлена без перезавантаження сторінки.");
+    if (form.checkValidity()) {
+      const data = new FormData(form);
+      const formObject = Object.fromEntries(data.entries());
+
+      console.log("Дані готові до відправки:");
+      console.log(formObject);
+
+      if (formStatus) {
+        formStatus.textContent =
+          "Повідомлення успішно відправлено!";
+
+        formStatus.style.color = "green";
+      }
+
+      alert("Форму успішно відправлено!");
+
+      form.reset();
+    } else {
+      form.reportValidity();
+    }
   });
+
+  // Знімаємо кастомну помилку під час введення
+  const messageField = form.elements.message;
+
+  messageField.addEventListener("input", () => {
+    messageField.setCustomValidity("");
+  });
+
+  // Золоте правило безпеки:
+  // Клієнтська валідація в JavaScript не гарантує безпеку.
+  // Будь-які дані обов’язково потрібно перевіряти ще й на сервері,
+  // тому що JavaScript можна вимкнути або змінити через DevTools.
 }
