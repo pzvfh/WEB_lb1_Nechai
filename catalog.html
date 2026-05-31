@@ -29,6 +29,10 @@
           Каталог фільмів
         </a>
 
+        <div class="hidden items-center gap-2 rounded-full bg-cyan-600 px-4 py-1.5 text-sm font-bold text-white md:flex">
+          🍿 Обрано (API): <span id="watchlist-count">0</span>
+        </div>
+
         <button
           id="menuBtn"
           type="button"
@@ -116,7 +120,25 @@
             id="catalog-body"
             class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           </div>
-        </section>
+
+          <div class="mt-12 border-t border-slate-200 pt-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-2">
+              🔥 Жива афіша 
+            </h2>
+            <p class="text-sm text-slate-500 mb-6">
+              Ці картки завантажуються асинхронно через Fetch API. Кнопка нижче додає серіал у локальний список до перегляду.
+            </p>
+            
+            <div id="loading-spinner" class="py-12 text-center font-medium text-slate-500 animate-pulse">
+              🍿 Завантаження свіжих кінорелізів з TVMaze...
+            </div>
+
+            <div
+              id="api-movies-container"
+              class="grid grid-cols-1 gap-6 md:grid-cols-2">
+            </div>
+          </div>
+          </section>
 
         <aside class="lg:col-span-4">
           <div class="sticky top-6 rounded-2xl bg-white p-6 shadow-lg">
@@ -147,7 +169,7 @@
           </h2>
 
           <p class="mt-2 text-sm text-slate-400">
-            Динамічний каталог для ЛР №4.
+            Динамічний каталог для ЛР №4 та ПР №3.
           </p>
         </div>
 
@@ -164,6 +186,9 @@
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
+  <!-- <script src="js/script.js"></script> -->
+  <script src="js/main.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/catalog.js"></script>
 </body>
 </html>
